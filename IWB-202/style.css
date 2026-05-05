@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:wght@700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: "Cairo", sans-serif;
+  font-size: 15px;
+  background-color: #000000;
+  color: #ffffff;
+  direction: rtl;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ===== Font ===== */
+h1 {
+  font-family: "Playfair Display", "Cairo", serif;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* ===== NavBar ===== */
+nav {
+  background-color: #111111;
+  padding: 0 40px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+}
+
+nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #c8914a;
+}
+
+.nav-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #c8914a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #9a9a9a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 2px;
+  transition:
+    color 0.25s,
+    background 0.25s;
+  letter-spacing: 0.3px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #c8914a;
+  background-color: rgba(200, 145, 74, 0.1);
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #0d0d0d;
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 48px;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(assets/Images/BG-Header.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center top,
+    rgba(200, 145, 74, 0.12) 0%,
+    transparent 70%
+  );
+}
+
+header h1 {
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+header p {
+  color: #9a9a9a;
+  font-size: 17px;
+  position: relative;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Card ===== */
+.card {
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  padding: 32px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 32px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.6);
+}
+
+.card-title {
+  font-size: 20px;
+  color: #c8914a;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48px;
+  height: 2px;
+  background: #c8914a;
+}
+
+/* ===== Table ===== */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  background-color: #111111;
+}
+
+thead th {
+  padding: 16px 20px;
+  color: #c8914a;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  background-color: #1a1a1a;
+  transition: background-color 0.2s;
+}
+tbody tr:nth-child(even) {
+  background-color: #161616;
+}
+tbody tr:hover {
+  background-color: #222222;
+}
+
+tbody td {
+  padding: 14px 20px;
+  text-align: center;
+  vertical-align: middle;
+  color: #dddddd;
+  font-size: 14px;
+}
+
+/* ===== Numder University ===== */
+.Numder-University {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(200, 145, 74, 0.12);
+  color: #c8914a;
+  padding: 3px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+  margin: 2px;
+  letter-spacing: 0.5px;
+}
+/* ===== Footer ===== */
+footer {
+  background-color: #080808;
+  text-align: center;
+  padding: 32px 24px;
+  color: #555555;
+  font-size: 13px;
+  margin-top: 64px;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c8914a, transparent);
+}
+footer a {
+  color: #c8914a;
+  text-decoration: none;
+  font-weight: 600;
+}
+footer a:hover {
+  color: #e0a855;
+}
+
+/* ===== Contact ===== */
+.contact-item {
+  display: flex;
+  width: 450px;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px;
+  background-color: #111111;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+.contact-item:hover {
+  background-color: #1a1a1a;
+}
+.contact-icon {
+  font-size: 22px;
+  min-width: 36px;
+  text-align: center;
+  color: #c8914a;
+}
+.contact-info h4 {
+  color: #c8914a;
+  font-size: 11px;
+  margin-bottom: 2px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.contact-info p {
+  color: #cccccc;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* flex-Contact */
+.flex-Contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* ===== Button ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 32px;
+  border: none;
+  border-radius: 2px;
+  font-family: "Cairo", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.btn-gold {
+  background-color: #c8914a;
+  color: #0d0d0d;
+  font-weight: 900;
+}
+
+.btn-gold:hover {
+  background-color: #e0a855;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200, 145, 74, 0.4);
+}
+
+.btn-outline {
+  background-color: transparent;
+  outline: 1px solid #c8914a;
+  color: #c8914a;
+}
+
+.btn-outline:hover {
+  background-color: #c8914a;
+  color: #0d0d0d;
+}
+
+/* ===== Button Details ===== */
+.btn-details {
+    background-color: transparent;
+    outline: 1px solid #C8914A;
+    color: #C8914A;
+    padding: 6px 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.25s;
+    white-space: nowrap;
+}
+
+.btn-details:hover,
+.btn-details.active {
+    background-color: #C8914A;
+    color: #0D0D0D;
+}
+
+/* ===== Details ===== */
+.details-content {
+    display: grid;
+    gap: 24px;
+    font-size: 14px;
+    align-items: center;
+    grid-auto-flow: column;
+}
+
+.details-section p  { color: #BBBBBB; margin-bottom: 4px; }
+.details-section ul { list-style: none; padding: 0; }
+.details-section ul li { color: #999999; padding: 3px 0; font-size: 13px; }
+.details-section ul li::before { content: "— "; color: #C8914A; }
+
+.details-tag {
+    display: inline-block;
+    background-color: rgba(200,145,74,0.15);
+    color: #C8914A;
+    padding: 3px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+
+/* ===== Form Order ===== */
+.form-group { margin-bottom: 24px; }
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #9A9A9A;
+    font-size: 12px;
+    margin-bottom: 4px;
+    text-align: right;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+label span.required { color: #C8914A; margin-right: 3px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.form-section-title {
+    font-weight: 700;
+    font-size: 11px;
+    color: #C8914A;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 24px 0 16px;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.form-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(to left, #C8914A, transparent);
+}
+
+/* ===== Input ===== */
+input[type="text"], input[type="email"], input[type="date"], input[type="tel"], input[type="number"], select, textarea {
+    width: 100%;
+    background-color: #111111;
+    border: none;
+    border-bottom: 1px solid #333333;
+    border-radius: 0;
+    padding: 12px 4px;
+    color: #FFFFFF;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    direction: rtl;
+    transition: border-color 0.25s;
+    outline: none;
+  }
+
+/* ===== Ali Dawud ===== */

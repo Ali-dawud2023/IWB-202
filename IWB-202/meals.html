@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ar" dir="rtl" xmlns="https://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>قائمة الوجبات</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <!--  NavBar  -->
+    <nav>
+      <a href="home.html" class="nav-logo"
+        ><img src="assets/logo.png" width="24" alt="Logo" /> مطعم الأصالة</a
+      >
+      <ul class="nav-links">
+        <li><a href="home.html">الرئيسية</a></li>
+        <li><a href="aboutUs.html">من نحن</a></li>
+        <li><a href="meals.html" class="active">الوجبات</a></li>
+      </ul>
+    </nav>
+    <!--  End NavBar  -->
+
+    <!--  Header  -->
+    <header
+      style="
+        min-height: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      "
+    >
+      <h1>
+        <img src="assets/logo.png" width="30px" alt="Logo" /> قائمة الوجبات
+      </h1>
+      <div class="divider"></div>
+      <p>اختر وجباتك المفضلة واستمتع بتجربة طعام أصيلة</p>
+    </header>
+    <!--  End Header  -->
+
+    <!--  Container  -->
+    <div class="container">
+      <!--  Card  -->
+      <div class="card" style="margin-bottom: 40px">
+        <h2 class="card-title"><img src="assets/Icon/Icon-List.png" width="24" alt="List"/> قائمة الوجبات</h2>
+        <p style="margin-bottom: 20px; color: #666666; font-size: 13px">
+          <img src="assets/Icon/Icons-Light-Bulb.png" width="16" alt="Memo"/> اضغط على
+          <strong>إظهار التفاصيل</strong>
+          لمعرفة مكونات الوجبة، وضع علامة في
+          <strong>خانة الاختيار</strong>
+          لإضافة الوجبة إلى طلبك.
+        </p>
+
+        <!--  Table Meals   -->
+        <div class="table-wrapper" style="margin-bottom: 20px">
+          <table
+            id="mealsTable"
+            class="table table-bordered text-center"
+            style="margin-bottom: 20px"
+          >
+            <thead>
+              <tr>
+                <th>الرمز</th>
+                <th>الوجبة</th>
+                <th>السعر</th>
+                <th>إظهار التفاصيل</th>
+                <th>اختيار</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <!--  End Table Meals   -->
+
+        <!--  button Follow  -->
+        <div style="text-align: center">
+          <p class="muted-text" style="margin-bottom: 20px; font-size: 13px">
+            بعد اختيار وجباتك اضغط على زر "متابعة" لإتمام طلبك
+          </p>
+          <button
+            class="btn btn-gold"
+            id="continueBtn"
+            style="font-size: 16px; padding: 13px 40px"
+          >
+            متابعة
+          </button>
+        </div>
+      </div>
+
+      <!--  Order Form  -->
+      <div id="orderForm" style="display: none; margin-top: 20px">
+        <div id="order-section">
+          <div class="card">
+            <h2 class="card-title">
+              <img src="assets/Icon/Icon-Memo.png" width="20" alt="Memo"/> نموذج الطلب</h2>
+            <p class="muted-text" style="font-size: 13px">
+              يرجى تعبئة البيانات التالية. الحقول المميزة بـ
+              <span>*</span> إلزامية.
+            </p>
+
+            <div class="form-section-title">بيانات مقدم الطلب</div>
+<form id="myForm">
+              <div  class="form-grid">
+              <!--  Full Name  -->
+              <div class="form-group">
+                <label for="fullName">
+                  الاسم الكامل
+                  <span style="font-size: 11px">(أحرف عربية فقط)</span>
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  class="form-control"
+                  placeholder="أدخل اسمك الكامل باللغة العربية"
+                  maxlength="100"
+                />
+              </div>
+
+              <!--  Number National  -->
+              <div class="form-group">
+                <label for="nationalId">
+                  الرقم الوطني
+                  <span class="required">*</span>
+                  <span style="font-size: 11px">(11 خانة)</span>
+                </label>
+                <input
+                  type="text"
+                  id="nationalId"
+                  class="form-control"
+                  placeholder="أدخل رقمك الوطني المكون من 11 خانة"
+                  maxlength="11"
+                  inputmode="numeric"
+                />
+              </div>
+
+              <!--  Birth Date  -->
+              <div class="form-group">
+                <label for="birthDate">
+                  تاريخ الولادة
+                  <span style="font-size: 11px">(dd-mm-yyyy)</span>
+                </label>
+                <input type="text"  id="birthDate" class="form-control" />
+              </div>
+
+              <!--  Number Phone -->
+              <div class="form-group">
+                <label for="mobile">
+                  رقم الموبايل
+                  <span style="font-size: 10px">(Syriatel أو MTN)</span>
+                </label>
+                <input
+                  type="tel"
+                  id="mobile"
+                  class="form-control"
+                  placeholder="09XXXXXXXXX"
+                  maxlength="10"
+                  inputmode="numeric"
+                  dir="ltr"
+                  style="text-align: right"
+                />
+              </div>
+
+              <!--  Email  -->
+              <div class="form-group" style="grid-column: span 2">
+                <label for="email">البريد الإلكتروني</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="example@email.com"
+                  dir="ltr"
+                  style="text-align: right"
+                />
+              </div>
+            </div>
+            <!-- end form-grid -->
+
+            <!--  Submit -->
+            <div style="text-align: center;">
+              <button
+                type="submit"
+                class="btn btn-gold"
+                style="font-size: 16px; padding: 13px 40px"
+              >
+              إرسال 
+              </button>
+       </form>
+
+
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+      </div>
+      <!--  End Order Form  -->
+
+      <div id="result" style="margin-top: 20px"></div>
+    </div>
+    <!--  End Container  -->
+
+    <script src="myFunctions.js"></script>
+
+    <!--  Footer  -->
+    <footer>
+      <p>
+        <img src="assets/logo.png" width="16" alt="Logo" /> مطعم الأصالة &copy;
+        2026 | وظيفة تصميم مواقع الويب - BAIT SVU
+      </p>
+      <p style="margin-top: 8px">بأشراف الدكتور Ghayth Sameer Moustapha</p>
+    </footer>
+    <!--  End Footer  -->
+  </body>
+</html>
